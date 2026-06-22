@@ -3,91 +3,457 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Contact — Dhruthi</title>
   <link rel="icon" type="image/png" href="favicon.jpeg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ── CONTACT PAGE SPECIFIC ── */
+
+    .get-in-touch {
+      min-height: 52vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 140px 60px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .get-in-touch-inner {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      width: 100%;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .get-in-touch h1 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(4.5rem, 13vw, 11rem);
+      font-weight: 900;
+      line-height: .88;
+      letter-spacing: -.02em;
+    }
+
+    .get-in-touch-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-bottom: .5rem;
+      flex-shrink: 0;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: .45rem 1rem;
+      border-radius: 100px;
+    }
+
+    .meta-pill .dot { color: #5CB85C; }
+
+    /* ── FORM SECTION ── */
+
+    .contact-form-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-form-left {
+      padding: 70px 60px;
+      border-right: 1px solid var(--border);
+    }
+
+    .contact-form-right {
+      padding: 70px 60px;
+    }
+
+    /* Left side — intro text */
+    .contact-form-left h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.01em;
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-form-left p {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      max-width: 380px;
+    }
+
+    .contact-detail-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .contact-detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+      font-family: 'Barlow Condensed', sans-serif;
+    }
+
+    .contact-detail-row:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-detail-row .cd-label {
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--muted);
+      font-family: 'Barlow', sans-serif;
+    }
+
+    .contact-detail-row .cd-val {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .contact-socials-row {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid var(--border);
+      padding: .6rem 1.2rem;
+      border-radius: 100px;
+      transition: .25s;
+    }
+
+    .social-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── THE FORM ── */
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .form-group {
+      position: relative;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-group:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .form-group label {
+      display: block;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: var(--muted);
+      padding: 1.2rem 0 .3rem;
+      transition: color .2s;
+    }
+
+    .form-group:focus-within label {
+      color: var(--accent);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      display: block;
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -.01em;
+      padding: .2rem 0 1.2rem;
+      resize: none;
+      cursor: none;
+    }
+
+    .form-group textarea {
+      min-height: 130px;
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-family: 'Barlow', sans-serif;
+      line-height: 1.7;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--border);
+    }
+
+    /* Submit button */
+    .form-submit-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      gap: 1rem;
+    }
+
+    .form-note {
+      font-size: .78rem;
+      color: var(--muted);
+      max-width: 240px;
+      line-height: 1.6;
+    }
+
+    .btn-submit {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--ink);
+      color: var(--bg);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 100px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      cursor: none;
+      transition: background .25s, transform .15s;
+      flex-shrink: 0;
+    }
+
+    .btn-submit:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-submit:disabled {
+      opacity: .5;
+      transform: none;
+    }
+
+    /* Success / error states */
+    .form-status {
+      display: none;
+      margin-top: 1.5rem;
+      padding: 1.2rem 1.5rem;
+      border-radius: 6px;
+      font-size: .9rem;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .form-status.success {
+      display: block;
+      background: color-mix(in srgb, #5CB85C 12%, transparent);
+      border: 1px solid color-mix(in srgb, #5CB85C 30%, transparent);
+      color: #2d7a2d;
+    }
+
+    .form-status.error {
+      display: block;
+      background: color-mix(in srgb, var(--accent) 10%, transparent);
+      border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+      color: var(--accent);
+    }
+
+    /* Spinner inside button */
+    .btn-submit .spinner {
+      display: none;
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+    }
+
+    .btn-submit.loading .btn-label { display: none; }
+    .btn-submit.loading .spinner   { display: block; }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      .get-in-touch { padding: 130px 24px 50px; }
+      .get-in-touch-inner { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+      .contact-form-section { grid-template-columns: 1fr; }
+      .contact-form-left { border-right: none; border-bottom: 1px solid var(--border); padding: 50px 24px; }
+      .contact-form-right { padding: 50px 24px; }
+      .form-submit-row { flex-direction: column; align-items: flex-start; }
+      .btn-submit { width: 100%; justify-content: center; }
+    }
+  </style>
 </head>
 <body class="is-loading">
 
   <div class="page-transition"></div>
-
   <div class="cursor"></div>
 
   <nav>
     <a href="index.html" class="logo">DHRUTHI</a>
-
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="work.html">Work</a></li>
       <li><a href="contact.html" class="nav-cta">Contact</a></li>
     </ul>
-
     <div class="nav-toggle">
       <span></span><span></span><span></span>
     </div>
   </nav>
 
-  <section class="get-in-touch reveal">
-    <h1>Get in<br>touch</h1>
-  </section>
+  <!-- HERO -->
+  <div class="get-in-touch reveal">
+    <div class="get-in-touch-inner">
+      <h1>Get in<br>touch.</h1>
+      <div class="get-in-touch-meta">
+        <span class="meta-pill"><span class="dot">●</span> Open to opportunities</span>
+        <span class="meta-pill">Response within 24 hrs</span>
+      </div>
+    </div>
+  </div>
 
-  <section class="contact-body reveal">
+  <!-- FORM + LEFT PANEL -->
+  <div class="contact-form-section reveal">
 
-    <div class="contact-intro">
+    <!-- LEFT — info -->
+    <div class="contact-form-left">
+      <h2>Let's work<br>together.</h2>
       <p>
-        I'm currently open to internships, freelance projects,
-        and collaborations. If you have something in mind —
-        or just want to say hi — my inbox is open.
+        Whether it's an internship, a freelance project,
+        a collaboration, or just a conversation — fill in
+        the form and I'll get back to you soon.
       </p>
-    </div>
 
-    <div class="contact-links-row">
-
-      <a href="mailto:dhruthishree03@gmail.com" class="contact-big-link">
-        dhruthishree03@gmail.com
-        <span>↗</span>
-      </a>
-
-      <div class="contact-socials">
-        <a href="https://www.linkedin.com/in/dhruthi-shree-v-s-9880933a3/">LinkedIn</a>
-        <a href="https://github.com/Dhunaur" target="_blank">GitHub</a>
+      <div class="contact-detail-list">
+        <div class="contact-detail-row">
+          <span class="cd-label">Based in</span>
+          <span class="cd-val">Bengaluru, India</span>
+        </div>
+        <div class="contact-detail-row">
+          <span class="cd-label">Available for</span>
+          <span class="cd-val">Internships & Projects</span>
+        </div>
+        <div class="contact-detail-row">
+          <span class="cd-label">Response time</span>
+          <span class="cd-val">Within 24 hours</span>
+        </div>
       </div>
 
-    </div>
-
-    <div class="contact-meta-row">
-      <div class="contact-meta-item">
-        <span class="meta-label-sm">Based in</span>
-        <span class="meta-val">Bengaluru, India</span>
-      </div>
-      <div class="contact-meta-item">
-        <span class="meta-label-sm">Available for</span>
-        <span class="meta-val">Internships & Projects</span>
-      </div>
-      <div class="contact-meta-item">
-        <span class="meta-label-sm">Response time</span>
-        <span class="meta-val">Within 24 hours</span>
+      <div class="contact-socials-row">
+        <a href="https://www.linkedin.com/in/dhruthi-shree-v-s-9880933a3/" target="_blank" class="social-link">LinkedIn ↗</a>
+        <a href="https://github.com/Dhunaur" target="_blank" class="social-link">GitHub ↗</a>
       </div>
     </div>
 
-  </section>
+    <!-- RIGHT — form -->
+    <div class="contact-form-right">
+
+      <!--
+        WEB3FORMS SETUP (free, no backend):
+        1. Go to https://web3forms.com
+        2. Enter your email → get a free Access Key
+        3. Replace "YOUR_ACCESS_KEY_HERE" below with your key
+        That's it — submissions arrive in your inbox.
+      -->
+      <form
+        class="contact-form"
+        id="contactForm"
+        action="https://api.web3forms.com/submit"
+        method="POST"
+      >
+        <!-- Web3Forms access key — replace with yours -->
+        <input type="hidden" name="access_key" value="baaafb4f-5ae0-4c0a-b977-13f7e5dad57e">
+        <!-- Optional: customise the email subject line -->
+        <input type="hidden" name="subject" value="New message from your portfolio">
+        <!-- Honeypot spam filter -->
+        <input type="checkbox" name="botcheck" style="display:none">
+
+        <div class="form-group">
+          <label for="name">Your name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Jane Smith"
+            required
+            autocomplete="name"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">Your email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="jane@example.com"
+            required
+            autocomplete="email"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Tell me what you have in mind..."
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-submit-row">
+          <p class="form-note">
+            Your email stays private — messages come straight to my inbox.
+          </p>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-label">Send message →</span>
+            <span class="spinner"></span>
+          </button>
+        </div>
+
+        <div class="form-status" id="formStatus"></div>
+
+      </form>
+    </div>
+  </div>
 
   <footer>
-
     <div class="footer-top">
-
       <div class="footer-contact">
-        <div class="fact-row">
-          <span>Email</span>
-          <span><a href="mailto:dhruthishree03@gmail.com">dhruthishree03@gmail.com</a></span>
-        </div>
         <div class="fact-row">
           <span>Based in</span>
           <span>Bengaluru, Karnataka</span>
@@ -97,7 +463,6 @@
           <span>Internships & Projects</span>
         </div>
       </div>
-
       <div class="footer-links-group">
         <div>
           <span>Pages</span>
@@ -107,7 +472,6 @@
             <li><a href="work.html">Work</a></li>
           </ul>
         </div>
-
         <div>
           <span>Socials</span>
           <ul>
@@ -116,17 +480,54 @@
           </ul>
         </div>
       </div>
-
     </div>
-
     <div class="footer-bottom">
       <div class="footer-wordmark">DHRUTHI.</div>
       <div class="footer-copy">© 2026 Dhruthi. Made with curiosity.</div>
     </div>
-
   </footer>
 
   <script src="script.js"></script>
+
+  <script>
+    // Form submission handler — Web3Forms via fetch (no page reload)
+    const form     = document.getElementById('contactForm');
+    const btn      = document.getElementById('submitBtn');
+    const status   = document.getElementById('formStatus');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Loading state
+      btn.classList.add('loading');
+      btn.disabled = true;
+      status.className = 'form-status';
+      status.textContent = '';
+
+      try {
+        const data = new FormData(form);
+        const res  = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data
+        });
+        const json = await res.json();
+
+        if (json.success) {
+          status.className = 'form-status success';
+          status.textContent = '✓ Message sent! I\'ll get back to you within 24 hours.';
+          form.reset();
+        } else {
+          throw new Error(json.message || 'Something went wrong.');
+        }
+      } catch (err) {
+        status.className = 'form-status error';
+        status.textContent = '✗ ' + (err.message || 'Failed to send. Please try emailing me directly.');
+      } finally {
+        btn.classList.remove('loading');
+        btn.disabled = false;
+      }
+    });
+  </script>
 
 </body>
 </html>
