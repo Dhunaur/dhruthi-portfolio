@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vehicle Pollution Control — Dhruthi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="is-loading">
+
+  <div class="page-transition"></div>
+  <div class="cursor"></div>
+
+  <nav>
+    <a href="index.html" class="logo">DHRUTHI</a>
+    <ul>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="project-header reveal">
+    <span class="project-status live">● OPEN SOURCE</span>
+    <h1>Vehicle Pollution Control <span>— Java desktop system</span></h1>
+  </div>
+
+  <div class="project-image reveal">
+    <div class="frame"><img src="vehicle.jpeg" alt="Dhruthi" style="width:100%; height:100%; object-fit:cover;"></div>
+  </div>
+
+  <div class="project-overview">
+
+    <div class="reveal">
+      <span class="overview-label">Project overview</span>
+      <p class="overview-text">
+        A Java Swing desktop application for monitoring and controlling vehicle emissions. Officers can register vehicles, log CO, HC, and smoke readings, auto-flag vehicles that fail pollution norms, schedule re-tests, and generate visual reports — all backed by a MySQL database with a full admin settings panel.
+      </p>
+    </div>
+
+    <div class="meta-row reveal">
+      <div class="meta-item">
+        <span class="meta-label">Project type</span>
+        <span class="meta-value">Java Desktop App</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Year</span>
+        <span class="meta-value">2026</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">My role</span>
+        <span class="meta-value">Researcher & Developer</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Project link</span>
+        <span class="meta-value"><a href="https://github.com/Dhunaur/Vehicle-Emission-Monitoring-System">github.com/Dhunaur/Vehicle-Emission-Monitoring-System</a></span>
+      </div>
+    </div>
+
+    <ul class="breakdown reveal">
+      <li>Built a multi-panel Swing UI using CardLayout — Dashboard, Register Vehicle, Emission Check, Reports, Re-Test, and Admin Settings — navigated via a custom sidebar with role-based access for admins and users.</li>
+      <li>Implemented the emission check engine: reads CO, HC, and smoke levels, compares against configurable thresholds from AdminSettings, and auto-marks vehicles as Pass or Fail with a re-test cycle of 6 months.</li>
+      <li>Connected all panels to MySQL via a DAO layer (EmissionDAO, VehicleDAO, UserDAO, AdminSettingsDAO) with a centralized DBConnection class — keeping database logic cleanly separated from the UI.</li>
+      <li>Added a visual report dialog with charts showing emission trends per vehicle, plus an email alert utility (EmailUtil) to notify owners when their vehicle fails inspection.</li>
+    </ul>
+
+  </div>
+
+  <div class="other-projects reveal">
+    <h2>other projects</h2>
+    <div class="other-grid">
+      <a href="project1.html" class="other-card">
+        <div class="other-thumb"><img src="skincare.jpeg" alt="Dhruthi" style="width:100%; height:100%; object-fit:cover;"></div>
+        <div class="other-info">
+          <div class="other-title">Skincare Store <em>(open source)</em></div>
+          <div class="other-cat">PHP · MySQL · Full Stack</div>
+        </div>
+      </a>
+      <a href="project2.html" class="other-card">
+        <div class="other-thumb"><img src="flower.jpeg" alt="Dhruthi" style="width:100%; height:100%; object-fit:cover;"></div>
+        <div class="other-info">
+          <div class="other-title">Flower Shop App <em>(open source)</em></div>
+          <div class="other-cat">React · Node · MongoDB</div>
+        </div>
+      </a>
+      <a href="work.html" class="other-card">
+        <div class="other-thumb"><img src="work.jpeg" alt="Dhruthi" style="width:100%; height:100%; object-fit:cover;"></div>
+        <div class="other-info">
+          <div class="other-title">Back to work</div>
+          <div class="other-cat">See everything</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div class="footer-contact">
+        <div class="fact-row"><span>Email</span><span><a href="mailto:dhruthishree03@gmail.com">dhruthishree03@gmail.com</a></span></div>
+        <div class="fact-row"><span>Based in</span><span>Bengaluru, Karnataka</span></div>
+        <div class="fact-row"><span>Available for</span><span>Internships & Projects</span></div>
+      </div>
+      <div class="footer-links-group">
+        <div><span>Pages</span><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="work.html">Work</a></li></ul></div>
+        <div><span>Socials</span><ul><li><a href="https://www.linkedin.com/in/dhruthi-shree-v-s-9880933a3/">LinkedIn</a></li><li><a href="https://github.com/Dhunaur" target="_blank">GitHub</a></li></ul></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-wordmark">DHRUTHI.</div>
+      <div class="footer-copy">© 2026 Dhruthi. Made with curiosity.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
